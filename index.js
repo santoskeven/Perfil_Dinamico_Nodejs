@@ -1,10 +1,7 @@
 const fs = require('fs')
-const path = require('path')
 const express = require('express')
 const exphbs = require('express-handlebars')
 const porta = 3000;
-
-let userG;
 
 const app = express();
 
@@ -33,7 +30,6 @@ app.get('/user', (req, res) => {
 app.post('/acess/user', (req, res) => {
 
     const user = req.body.user
-    userG = user
 
      if(!ChecKAccounts(user)){
         return res.render('home')
@@ -74,8 +70,6 @@ app.get('/perfil/editar', (req, res) => {
         user: AccountData.userbase
     }
 
-    // console.log(valores)
-
     res.render('editarPerfil', {valores})
 
 })
@@ -114,15 +108,14 @@ app.get('/', (req, res) => {
 })
 
 function DefinirConta(conta){
-    console.log('pass')
+ 
     const user = PegarConta(conta)
     user.userbase = conta
     fs.writeFileSync(`./views/users/${conta}.json`, 
         JSON.stringify(user),
         (err)=>{console.log(err)}
     )
-    console.log(user)
-     console.log('user definido com sucesso')
+
 }
 
 function ChecKAccounts(NomeConta){

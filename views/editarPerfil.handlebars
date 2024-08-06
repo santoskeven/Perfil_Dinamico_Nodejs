@@ -1,25 +1,25 @@
 {{#with valores}}
     <form action="/perfil/editado" method="POST">
     <div>
-        <h3>Digite o nome da sua conta</h3>
-        <input type="text" name="nome" value='{{this.nome}}'>
+        <h3>Digite seu nome</h3>
+        <input style='width: 500px' type="text" name="nome" value='{{this.nome}}'>
     </div>
      <div>
         <h3>Digite sua idade</h3>
-        <input type="text" name="idade" value='{{this.idade}}'>
+        <input style='width: 50px' type="text" name="idade" value='{{this.idade}}'>
     </div>
      <div>
         <h3>Digite sua biografia</h3>
-        <input type="text" name="biografia" value='{{this.biografia}}'>
+        <input style='width: 500px' type="text" name="biografia" value='{{this.biografia}}'>
     </div>
     <div>
         <h3>Digite seus hobbies</h3>
-        <input style='width: 800px' type="text" name="hobbies" value='{{this.hobbies}}'>
+        <input style='width: 500px' type="text" name="hobbies" value='{{this.hobbies}}'>
     </div>
      <div>
         <input style='width: 800px' type="hidden" name="user" value='{{this.user}}'>
     </div>
     
-    <input style='padding: 1%' type="submit" value="EDITAR INFORMAÇÕES">
+    <input style='padding: 1%; margin-top: 20px' type="submit" value="EDITAR INFORMAÇÕES">
 </form>
 {{/with}}
